@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Project</title>
+    <style>
+        .header
+        {
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #337def;
+            color: #fcc729;
+        }
+        .header:hover
+        {
+            cursor: default;
+        }
+        h2
+        {
+            background-color: white;
+        }
+        .linktext
+        {
+            background-color: #390897;
+            font-style: italic;
+            font-family: monospace;
+            color: #b8df10;
+            border-radius: 5px;
+            transition-duration: .2s;
+            padding: 7px 10px;
+        }
+        .linktext:hover
+        {
+            border: 2px solid #390897;
+            font-style: italic;
+            font-family: monospace;
+            color: #b8df10;
+            background-color: white;
+            border-radius: 5px;
+            transition-duration: .4s;
+            padding: 5px 8px;
+        }
+        .img
+        {
+            background-color: transparent;
+        }
+        .footer
+        {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            border: 3px solid green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome To the Thahir's Laptop</h1>
+    </div>
+
+    {% block mainblock1 %}
+
+    {% endblock %}
+
+    <div class="footer">
+        About Me:
+        <a href="https://www.instagram.com/" class="img"><img src="https://www.pngitem.com/pimgs/m/510-5101812_transparent-square-clip-art-logo-instagram-hd-png.png" width="25" height="25"></a>
+        <a href="https://www.facebook.com/" class="img"><img src="https://www.citypng.com/public/uploads/preview/-11595349592mdhzsfgakx.png" width="25" height="25"></a>
+        <a href="https://www.linkedin.com/" class="img"><img src="https://assets.stickpng.com/images/58e91afdeb97430e81906504.png" width="25" height="25"></a>
+        <a href="https://www.youtube.com/" class="img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/YouTube_social_red_square_%282017%29.svg/2048px-YouTube_social_red_square_%282017%29.svg.png" width="25" height="25"></a>
+        <a href="https://www.twitch.tv/" class="img"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADhCAMAAADmr0l2AAAAkFBMVEWRR/8AAAD///+TSf+ZS/8nEj9lMafq6uqDQeDd3d0eHh5qampzc3ORkZFJSUmUSP8bER2MRux6enpDQ0Pz8/O9vb0/ImRgMJ1iMaBDJGvBwcEzMzMGBQCEQtxvN7iMRPAiEDdgYGA6OjqJiYmgoKCxsbEPEA8iIiJ5eXksLCw8Il85H1kaDCoaDyQLBgEVEBcg4xynAAACoUlEQVR4nO3a7XLSQBSA4Y2L0hbttgVrVbBKa9HWj/u/OwlB2KRZJiE77tnj+/zcMJ15e04Cw2AMAAAAAAAAAAAAAAAAAAAAAAAAAAAA1qxzdrD130jdEWQ/vYrhNnVHgBu9K6I4SV3SzrlIfcWJS93SKtb8hAZG20+xgfH6RAbaiH0CA23E/ZQZ6PfNXhxrLDXQ3vj///HRgadCAxv7qS3QNZ8v6gJvCtWBz5+fqgKtbc5PWeCz/VQWOGrp0xTYsp+qAtv2U1Xg6LP2wJedA08rtUvj7aGKwC/VpYl/dledLVUETqpLr/2zN9XZOYHJEEgggWkRSCCBaRFIIIFpEUgggWkR2ClwqiLwajldW975Z/ebs6n3RVTGgd0Q+I8RSOD/FvhVeeDbQnfgrk/MD2LjBu77dAZ6fe+l/Cg9ZmCtT8gtGDPQ7xul7tqJF/hB4H6aiIES779SrECR918pUqC/n3Luv1KcQKn7aSIFevO7FtYXJVByX4xAwftpgoFnqzPfw5UXNFvWrq0kzy8Y2PTN6/sYepHEvq6B+wnOVqHXXMt6f9jqG5jZ/HoHHuiT9PHF0y9w9j23vn6B2e2n6Rd4oE/k82WjR+CB/RQ7vz6BOe6n6RGYaV/3wOB+Poru6xo4OQ/2yX2+bHQMDJLeNzRQfN/AQOH3X2lQoOD3950hgU+ivh8MGBD4lMH8hgQ+ZjA+MyAwj/mtA38c2Sf/+Vlxl61+NoPmi/oLcni+hDl70eh7kPKbgkiagfOFrr5m4FzZ/JqBv7TNrxGobj9NPVDffppaoMb5+YE6+/aBKvfT7APni1w+kfW0DVS6n+ZvoN6+KlBx3yZQc18ZqLrP2N+F6j7jLrS+P2xZ3fMDAAAAAAAAAAAAAAAAAAAAAADi/QGTpEz8Do9nSgAAAABJRU5ErkJggg==" width="25" height="25"></a>
+    </div>
+</body>
+</html>

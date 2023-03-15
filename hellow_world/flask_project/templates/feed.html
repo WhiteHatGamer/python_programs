@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block mainblock1 %}
+<table>
+    {% for post in hposts %}
+    <tr>
+        <th>{{    hposts[post]['postid']    }}</th>
+        <th>{{    hposts[post]['postname']    }}</th>
+        <th>{{    hposts[post]['description']    }}</th>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
