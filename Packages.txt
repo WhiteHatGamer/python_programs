@@ -1,0 +1,5 @@
+#some Nice packages for Python dev
+pyttsx3 #TTS
+pillow #image operations
+qrcode #obv qrmakingetc
+pygame #OOOH MAAN Finally,We could install using --pre command with pip
