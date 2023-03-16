@@ -399,24 +399,6 @@ squareValue = square(n)
 print(f"The Square is {squareValue}")
 
 l1=[6,45,51,21,51,546,15,54,64,46,464,64,46,46,464,64,646,4]
-evenlambda = lambda a:not a%2
-#for making every even item in list as a list: 2 ways
-#1 Normal way
-evenList = []
-for i in l1:
-    if evenlambda(i):
-        evenList.append(i)
-
-#2 using filter
-evenList = list(filter(evenlambda, l1))
-'''
-filter takes a condition, or a lambda with iterable
-for i in l1:
-    evenList.append(filter(i%2))
-'''
-
-l2 = [1,2,3,4,5,6,7,8,9]
-sumlist = list(map(lambda n: n+5,l2))
 
 from functools import reduce
 
@@ -656,20 +638,111 @@ greet("name is this") #same as hellow,we give alias
 
 #try-n(except)-else-finally block #always follow this order
 try:
-    n1 = 12/0
-    print(n1)
-    raise ZeroDivisionError("You are trying to divide by zero")
+    n1 = 12
+    n2 = input("ENter the number: ")
+    if n2==0:
+        raise ZeroDivisionError("You are trying to divide by zero")
+    print(n1/n2)
+    class User:
+        def __init__(self,name,password):
+            self.username = name
+            self.password = password
+        
+        def Login(self):
+            raise NotImplementedError("This feature is not implemented yet") #for developers to usr messages
+        
 except ZeroDivisionError as zde:
+    print(f"{zde}Please enter non-zero number")
     pass
 except (ValueError,NameError) as vne:
+    print(f"Some name errors as {vne}")
     pass
 except Exception as Ex:
     print("This is General Exception AS : ", Ex)
 else: # only works when no exception #Use before finally
+    print("No Errors Occured")
     pass
 finally: #works always
+    print("Every Exception is handled")
     pass
 print("After Try and except")
-#after error program exited. can we make program to try again until no error
+#after error program exited. can we make program to try again until no error...
+#I DONT THINK WE CAN
+
+class Garage():
+    def __init__(self):
+        self.cars = []
+
+    def __len__(self):
+        return len(self.cars)
+    
+    def add_car(self, car):
+        if not isinstance(car,Car):
+            raise TypeError(f"Tried to add {car.__class__.__name__} to Garage, But you can only add Car Object")
+        self.append(car) #we dont need else because if raised exception the code exited without running this
+
+    def car_details(self,car):
+        raise NotImplementedError("Haven't yet implemented this Feature")
+
+
+class Car():
+    def __init__(self,make,model):
+        self.make = make
+        self.model = model
+
+    def __repr__(self):
+        return f"<Car {self.make} {self.model}"
+    
+
+Home_shed = Garage()
+camaro = Car('Chevrolet', 'Camaro')
+Home_shed.add_car(camaro)
+print(len(Home_shed))
+print(camaro)
+
 
 #offtopic, i always see you open so many windows. may i know how much RAM you have if you dont mind
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Advanced Built-in functions in python
+evenlambda = lambda a:not a%2
+#for making every even item in list as a list: 2 ways
+#1 Normal way
+evenList = []
+for i in l1:
+    if evenlambda(i):
+        evenList.append(i)
+
+#2 using filter
+evenList = list(filter(evenlambda, l1))
+'''
+filter takes a condition, or a lambda with iterable
+for i in l1:
+    evenList.append(filter(i%2))
+'''
+
+l2 = [1,2,3,4,5,6,7,8,9]
+sumlist = list(map(lambda n: n+5,l2))
