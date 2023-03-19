@@ -1,0 +1,99 @@
+
+'a' to add Movie
+'d' to Display Movies
+'s' to Search a Movie
+'q' to Quit
+Enter Your Choice: a
+
+Enter Movie title : Forrest Gump
+Enter Released Year : 1994
+Enter Movie Genre (seperated by comma','): Drama,Romance
+Enter Director : Robert Zemeckis
+Movie Added: 
+
+	Title	: Forrest Gump
+	Year	: 1994
+	Genre	: Drama, Romance
+	Director	: Robert Zemeckis
+
+
+'a' to add Movie
+'d' to Display Movies
+'s' to Search a Movie
+'q' to Quit
+Enter Your Choice: d
+
+	Title	: The Shawshank Redemption
+	Year	: 1994
+	Genre	: Drama
+	Director	: Frank Darabont
+
+
+	Title	: The Godfather
+	Year	: 1972
+	Genre	: Crime, Drama
+	Director	: Francis Ford Coppola
+
+
+	Title	: Pulp Fiction
+	Year	: 1994
+	Genre	: Crime, Drama
+	Director	: Quentin Tarantino
+
+
+	Title	: Forrest Gump
+	Year	: 1994
+	Genre	: Drama, Romance
+	Director	: Robert Zemeckis
+
+
+'a' to add Movie
+'d' to Display Movies
+'s' to Search a Movie
+'q' to Quit
+Enter Your Choice: s
+Movie Properties: Title, Year, Genre, Director
+What property of Movie you looking for: TiTlE
+What are you searching for: ThE SHaWsHaNkReDeMpTiOn
+
+Movie Found with Title - The Shawshank Redemption :
+
+	Title	: The Shawshank Redemption
+	Year	: 1994
+	Genre	: Drama
+	Director	: Frank Darabont
+
+Movie Properties: Title, Year, Genre, Director
+What property of Movie you looking for: year
+What are you searching for: 1994
+
+Movie Found with year - 1994 :
+
+	Title	: The Shawshank Redemption
+	Year	: 1994
+	Genre	: Drama
+	Director	: Frank Darabont
+
+
+Movie Found with year - 1994 :
+
+	Title	: Pulp Fiction
+	Year	: 1994
+	Genre	: Crime, Drama
+	Director	: Quentin Tarantino
+
+
+Movie Found with year - 1994 :
+
+	Title	: Forrest Gump
+	Year	: 1994
+	Genre	: Drama, Romance
+	Director	: Robert Zemeckis
+
+
+'a' to add Movie
+'d' to Display Movies
+'s' to Search a Movie
+'q' to Quit
+Enter Your Choice: q
+Saving File...

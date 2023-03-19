@@ -1,3 +1,0 @@
-{'title': 'Star Boy', 'genre': 'International', 'year': 2023, 'artists': 'Blinding Lights'}
-{'title': 'Bones', 'genre': 'International', 'year': 2022, 'artists': 'Imagine Dragons'}
-{'title': 'Flowers', 'genre': 'International', 'year': '2023', 'artists': 'Miley Cyrus'}
