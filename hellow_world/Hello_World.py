@@ -746,3 +746,62 @@ for i in l1:
 
 l2 = [1,2,3,4,5,6,7,8,9]
 sumlist = list(map(lambda n: n+5,l2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+#decorators
+def smartdiv(c): #the reference of old function gets stored in c
+    print("Inside smartdiv function: ", id(smartdiv))
+    def inner(d,e):
+        if e:
+            #some exception handling
+            pass
+        else:
+            result = c(d,e)
+            return result
+            #excecuting same logic when no errors
+        pass
+    pass
+
+
+#monkey patching - interview question
+#why some functions deprecating without using decorators?
+#theres deprecation warning when using old buggy library methods
+
+@smartdiv
+def div(a,b):
+    print("Inside div function: ",id(div))
+    return a/b
+
+#if we called 
+div(10,0) #this calls smartdiv automatically
+
+#if no decorator we can call this as
+inner_reference = smartdiv(div)
+inner_reference(10,0) #same as calling div with decorator
+
+
+#iterator - since we cant import large dataset to memory it will affect ram.. so iterator gets only the first
+            #elemnt and called using next()
+
+l1_iter = iter(l1)
+example_list = (i for i in range(100))
+print(next(example_list))
+print(l1_iter.__next__())
+
+#when you were taking list comprehension.. and called for without square bracket, a generator object was created
+#it happened when im doing project also
+#generator function
+#yield instead of return
+
+#we've learnt so much and that's all because of your amazing teaching. Thank you Mr. Athaulla
