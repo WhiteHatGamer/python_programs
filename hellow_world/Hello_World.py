@@ -1,5 +1,6 @@
-snake_case = "This is a Snace Case format in coding"
-camelCase = "This is camel case in coding. Perfect for C#?"
+snake_case = "this_is_a_snake_case_format_in_coding"
+camelCase = "thisIsCamelCaseInCoding. perfectFor C#?"
+PascalCase = "AndThisIsPascalCase"
 CONSTANT = "This is constant variable like Pi"
 PI = 3.14159
 NAME = "<Your Full Name Here>"
@@ -805,3 +806,40 @@ print(l1_iter.__next__())
 #yield instead of return
 
 #we've learnt so much and that's all because of your amazing teaching. Thank you Mr. Athaulla
+
+#multitasking
+#concurrency parellelism
+#syncronous and asyncronous
+#main thread - application
+#fcfs theory like
+#Add - 2sec, Sub - 2sec, Mul - 3sec
+#Total with one thread 7 second
+#if multitasked completed with 3 sec
+#Asyncronous - the process that does'nt depend on the user it keeps running until its completed
+from threading import Thread
+
+def functioncall():
+    pass
+
+
+filenames = [
+    'test1.txt',
+    'test2.txt',
+    'test3.txt'
+]
+
+from time import perf_counter
+
+time_counter = perf_counter()
+threads = [Thread(target=functioncall, args=(filename,'id','ids')) for filename in filenames]
+for thread in threads:
+    thread.start()
+
+for thread in threads:
+    thread.join()
+
+lock = Thread.lock
+
+#somefunction call
+time_counter -= perf_counter()
+print(f"Took {time_counter} time to complete process")

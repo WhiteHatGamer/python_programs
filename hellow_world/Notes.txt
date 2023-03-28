@@ -1,3 +1,2 @@
 Try to understand Lambda more
-beautifulsoup - library for python webscraping
-requests - module for weburl opening
+<generator object> iterator for bigger data
