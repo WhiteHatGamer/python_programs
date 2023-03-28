@@ -1,5 +1,8 @@
 #some Nice packages for Python dev
 pyttsx3 #TTS
 pillow #image operations
+face_recognition #importable 3rd party library
 qrcode #obv qrmakingetc
 pygame #OOOH MAAN Finally,We could install using --pre command with pip
+beautifulsoup - library for python webscraping
+requests - module for weburl opening
