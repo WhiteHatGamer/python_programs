@@ -8,6 +8,9 @@ from time import sleep
 
 numbers = ['0','1','2','3','4','5','6','7','8','9']
 
+#adding last name for understanding from which company this contacts are from
+COMPANY = "College"
+
 try:
     #get default profile from chrome
     profile = Options()
@@ -38,7 +41,10 @@ try:
     count = 0
     mails = open('Add_Contacts\Mail.txt', 'r')
     #contacts = open('Add_Contacts\contact.txt', 'w')
-    for mail in mails:
+    for mail in mails: #O(2n) because of removing numbers from emailid for only name
+        #for those mail with no user --> email id not correct
+        if '"' not in mail:
+            continue
         driver.get('https://contacts.google.com/new')
         email = mail.split('"')
         namelist = email[1].split('@')
@@ -49,7 +55,7 @@ try:
 
         #entering mail in text boxes
         driver.find_element(By.XPATH, fnameXPath).send_keys(name)
-        driver.find_element(By.XPATH, lnameXPath).send_keys("ASAP")
+        driver.find_element(By.XPATH, lnameXPath).send_keys(COMPANY)
         driver.find_element(By.XPATH, emailXPath).send_keys(email[1])
         driver.find_element(By.XPATH, noteXPath).send_keys("This is Selenium Generated Contact")
         driver.find_element(By.XPATH, saveButton).click()
