@@ -6,7 +6,7 @@ l=[]
 t=[]
 TabLeft=[["Tablet Name","Tab Required"]]
 for i in range(0,int(n)):
-    temp=input("Enter Tablet Name["+str(i+1)+"]: ")
+    temp=input(f"Enter Tablet Name["{i+1}"]: ")
     Tab.append(temp)
     g=input("Daily Dose: ")
     t.append(int(g))
