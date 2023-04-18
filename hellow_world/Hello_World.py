@@ -678,7 +678,7 @@ class Garage():
         return len(self.cars)
     
     def add_car(self, car):
-        if not isinstance(car,Car):
+        if not isinstance(car,Car): #this function checks whether the object 'car' is of the class 'Car' (with capital C)
             raise TypeError(f"Tried to add {car.__class__.__name__} to Garage, But you can only add Car Object")
         self.append(car) #we dont need else because if raised exception the code exited without running this
 
