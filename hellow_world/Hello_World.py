@@ -704,7 +704,10 @@ print(camaro)
 
 #offtopic, i always see you open so many windows. may i know how much RAM you have if you dont mind
 
+class MyCustomError(TypeError):
+    pass
 
+raise MyCustomError("Oh My, Myown custom error")
 
 
 
