@@ -1,0 +1,2 @@
+str = " asgdaf "
+str.strip()
