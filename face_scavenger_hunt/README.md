@@ -2,6 +2,7 @@ face_scavenger_hunt
 ==============================
 
 face detection system scavenger hunt for a campus
+It is in progress so ignored by .gitignore
 
 Project Organization
 ------------
