@@ -48,11 +48,18 @@ day_greeting_str = day_greeting.format(day = "Evening",name=NAME)
 #not True 
 Bosd = True
 BossA = False
-truthy = Bosd or BossA #return tru bcz bosd is true
-falsy = BossA and Bosd #return false cause bossa is false
-eg_name = "" #user no input (free exception handling coming)
+#return tru bcz bosd is true
+truthy = Bosd or BossA 
+
+#return false cause bossa is false
+falsy = BossA and Bosd 
+
+#user no input (free exception handling coming)
+eg_name = "" 
 eg_surname = "eg_surname"
-eg_full_name = eg_name or eg_surname #still gonna cause error if surname empty but we could generalize
+
+#still gonna cause error if surname empty but we could generalize
+eg_full_name = eg_name or eg_surname 
 s2nd_truthy = not falsy
 
 #comments--single line or mutiple lines which developer doesn't want to run
@@ -140,7 +147,8 @@ dictionary = {'key':'value',1:'a',2:'b'}
 
 confirmation = ['YES', 'Yes', 'yes', 'yEs']
 for i in confirmation:
-    if i.lower()=='yes': #used .lower to generalise every string so everythings 'yes' in smaller case
+    #used .lower to generalise every string so everythings 'yes' in smaller case
+    if i.lower()=='yes': 
         print("Confirmed")
 
 
@@ -423,7 +431,8 @@ print(account1("Sharookh",10000)) #adds with Rani
 
 #unpacking example
 def greatest(a,b,c): 
-    gtest = a if a>b and a>c else b if b>a else c  #like ternary operator in C (a>b && a>c)? a : (b>a? b : c)
+    #like ternary operator in C (a>b && a>c)? a : (b>a? b : c)
+    gtest = a if a>b and a>c else b if b>a else c  
     return gtest
 l1 = [12,87,54] #type(t1) = tuple
 gtest = greatest(l1[0],l1[1],l1[2])
@@ -435,11 +444,15 @@ def run(object,*dimension,speed = 1):
 
 
 run([1,2,3],12,23,34)
-run([2,3,4],34,45,56,speed=10) #i did this to show how different calling methods work.. BUT This CALLED POLYMORPHISM
+
+#i did this to show how different calling methods work.. BUT This CALLED POLYMORPHISM
+run([2,3,4],34,45,56,speed=10) 
 
 #classes
 class Employee: #pascal case
-    def __init__(self,new_eid,new_name,new_department,new_salary,new_email): #special/magic/dendor method
+
+    # __method__ : special/magic/dendor method
+    def __init__(self,new_eid,new_name,new_department,new_salary,new_email): 
         self.employeeid = new_eid
         self.name = new_name
         self.department = new_department
@@ -517,7 +530,8 @@ for i in employee_list:
         __eq__          ==
         __ne__          !=
 '''
-    #Instance MEthod Overloading #Costructor Overloading #Python dont need support for this Overloading
+    #Instance MEthod Overloading
+    #Costructor Overloading #Python dont need support for this Overloading
 #oververriding OR Run-Time Polymorphism OR Late Binding
 
 #how to return with placeholders(%d) . you did with --str--
@@ -567,7 +581,7 @@ class Staff(Employee): #staff inherited from Employee
     def days_left(self):
         return self.month_left * 30
     
-    @classmethod #Mandatory for class method/class variable Need to be used together method (Decorator)
+    @classmethod #Mandatory for class method/class variable Need to be used together (Decorator)
     def company(cls): #Any variable can be used... and cannot instance variable using classmethod
         print(f"Called by {cls.__name__}")
         print(cls.CLASS_VARIABLE)
@@ -595,7 +609,9 @@ worker = Staff(1010,"name1","cs",12000,"abc1example.com",12) #constructor - inti
 worker.display() #normal class Method
 print(worker.days_left) #we dont need () of methods.. Using @property decorator
 professor = Staff(1012,"name2","cs",11200000,"abc2@example.com",36)
-Staff.compare_employee(worker,professor) #giving two objects as attributes using @staticmethod decorator
+
+ #giving two objects as attributes using @staticmethod decorator
+Staff.compare_employee(worker,professor)
 
 class Money():
     def __init__(self, value1):
@@ -650,7 +666,8 @@ try:
             self.password = password
         
         def Login(self):
-            raise NotImplementedError("This feature is not implemented yet") #for developers to usr messages
+            #for developers to usr messages
+            raise NotImplementedError("This feature is not implemented yet")
         
 except ZeroDivisionError as zde:
     print(f"{zde}Please enter non-zero number")
@@ -678,9 +695,13 @@ class Garage():
         return len(self.cars)
     
     def add_car(self, car):
-        if not isinstance(car,Car): #this function checks whether the object 'car' is of the class 'Car' (with capital C)
-            raise TypeError(f"Tried to add {car.__class__.__name__} to Garage, But you can only add Car Object")
-        self.append(car) #we dont need else because if raised exception the code exited without running this
+        #isinstance function checks whether the object 'car' is of the class 'Car' (with capital C)
+        if not isinstance(car,Car): 
+            message = f"Tried to add {car.__class__.__name__} to Garage, But you can only add Car Object"
+            raise TypeError(message)
+        
+        #we dont need else because if raised exception the code exited without running this
+        self.append(car)
 
     def car_details(self,car):
         raise NotImplementedError("Haven't yet implemented this Feature")
@@ -704,16 +725,56 @@ print(camaro)
 
 #offtopic, i always see you open so many windows. may i know how much RAM you have if you dont mind
 
-class MyCustomError(TypeError):
-    pass
+#inheriting from TypeError for our Own custom error we can use most appropriate error
+#Exception for the very basic exceptions
+class CodedError(Exception):
+    """
+    The Doc String Comes Here
+    Exception Raised when Error code needed
+    Default error code 1
+    """
+    def __init__(self, message='Some Error Occured', code=1):
+        super().__init__(f"Error Code {code}: {message}")
+        self.code = code
 
-raise MyCustomError("Oh My, Myown custom error")
+try:
+    """
+    statement 1
+    statement 2
+    ...
+    """
+    res = CodedError()
+    #This Prints the Doc String with the dunder method
+    print(res.__doc__)
+    raise CodedError()
+except CodedError:
+    print("Oh My, Myown custom error",505)
 
+"""
+We Can Create This type of Doc String for the module too
+need to include at the very starting of the module
+"""
+"""Doc String Always should be inside multi-lineString even if its single-lined doc-string"""
 
+#Ask for forgiveness not permission:
+#we can try to run then proceed to catch exception with giving it to user:
+try:
+    Home_shed.add_car(camaro)
+except TypeError:
+    print(f"Your car was not a car")
+except ValueError:
+    print("Something Weird Happened...")
+finally:
+    print(f"The Garage now have {len(Home_shed)} Cars")
 
-
-
-
+#while developing long programms we might miss some errors
+#so for that we could traceback with:
+try:
+    Home_shed.add_car(camaro)
+except:
+    print("Some Big error Happened")
+    #giving raise here"
+    raise
 
 
 
@@ -795,15 +856,16 @@ inner_reference = smartdiv(div)
 inner_reference(10,0) #same as calling div with decorator
 
 
-#iterator - since we cant import large dataset to memory it will affect ram.. so iterator gets only the first
-            #elemnt and called using next()
+#iterator - since we cant import large dataset to memory it will affect ram..
+    #so iterator gets only the first elemnt and called using next()
 
 l1_iter = iter(l1)
 example_list = (i for i in range(100))
 print(next(example_list))
 print(l1_iter.__next__())
 
-#when you were taking list comprehension.. and called for without square bracket, a generator object was created
+#when you were taking list comprehension.. and called for without square bracket,
+#a generator object was created
 #it happened when im doing project also
 #generator function
 #yield instead of return
