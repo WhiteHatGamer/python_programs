@@ -19,15 +19,17 @@ def main():
         try:
             #Loading the xls File to aspose Workbook
             workbook = Workbook(data)
+            #get sheets to do auto fit columns
             worksheet = workbook.getWorksheets().get(0)
             worksheet.autoFitColumns()
             #creating pdf file path to store the converted data
             pdf_data = report_path + (os.path.basename(data).replace(".xls",".pdf"))
-            #class Workbook have save method with file path and saveformat as PDF
             try:
+                #Updating(Removing) already existing files
                 os.remove(pdf_data)
             except:
                 pass
+            #class Workbook have save method with file path and saveformat as PDF
             workbook.save(f"{pdf_data}", SaveFormat.PDF)
             print(f"Coverted from {os.path.basename(data)} to {os.path.basename(pdf_data)}")
         except Exception as E:
