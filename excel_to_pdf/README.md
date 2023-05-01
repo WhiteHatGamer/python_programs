@@ -1,18 +1,19 @@
 # Excel to PDF
-============
+==============================
 
 Simple Python Program to convert from excel to PDF
 
 Folder Structure
-----------------
+------------
 
-├── data             <- Folder to save input datas
-|
-├── report           <- Folder where output saves
-|
-├── app.py           <- Main Python file
-└── requirements.txt <- Required Python Libraries
+    ├── data             <- Folder to save input datas
+    |
+    ├── report           <- Folder where output saves
+    |
+    ├── app.py           <- Main Python file
+    └── requirements.txt <- Required Python Libraries
 
+--------
 
 Used Modules and Methods
 ------------------------
