@@ -16,5 +16,6 @@ Folder Structure
 
 Used Modules and Methods
 ------------------------
-<a href:"https://reference.aspose.com/cells/python-java/asposecells.api/saveformat">asposecells.api.SaveFormat</a>
+
+<a target="_blank" href="https://reference.aspose.com/cells/python-java/asposecells.api/saveformat">asposecells.api.SaveFormat</a>
 Utility class containing constants. Represents the format in which the workbook is saved.
