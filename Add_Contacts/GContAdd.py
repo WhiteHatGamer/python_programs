@@ -30,13 +30,13 @@ try:
     imgXPath = '//*[@id="yDmH0d"]/c-wiz/div/div/c-wiz/div/div[4]/c-wiz/div/div/div/div/div/span/div[1]/div[1]/div/img'
     composeButtonXPath = '/html/body/div[8]/div[3]/div/div[2]/div[2]/div[1]/div[1]/div/div'
 
-    #contacts.google.com
-    fnameXPath = "//*[@id='c0']/div[2]/div[1]/div/div[1]/div/div[1]/input"
-    lnameXPath = "//*[@id='c0']/div[2]/div[3]/div/div[1]/div/div[1]/input"
+    #contacts.google.com #old XPATH Commented for reference
+    fnameXPath = '//*[@id="c21"]' #"//*[@id='c0']/div[2]/div[1]/div/div[1]/div/div[1]/input"
+    lnameXPath = '//*[@id="c29"]' #"//*[@id='c0']/div[2]/div[3]/div/div[1]/div/div[1]/input"
     saveButton = '//*[@id="yDmH0d"]/c-wiz/div/div[1]/div[1]/div/div[1]/div[2]/div[2]/div[2]/button'
-    noteXPath = '//*[@id="c14"]/div/div[1]/div[2]/textarea'
-    emailXPath = "//*[@id='c4']/div[1]/div[1]/div/div[1]/input"
-    dpXPath = '//*[@id="yDmH0d"]/c-wiz/div/div[1]/div[1]/div/div[1]/div[2]/div[1]/div[1]/div/div/div/button/span/div/i' 
+    noteXPath = '//*[@id="c175"]/div/label' #//*[@id="c14"]/div/div[1]/div[2]/textarea'
+    emailXPath = '//*[@id="c77"]' #"//*[@id='c4']/div[1]/div[1]/div/div[1]/input"
+    dpXPath = '//*[@id="yDmH0d"]/c-wiz/div/div[1]/div[1]/div/div[1]/div[2]/div[1]/div[1]/div/div/div/button/span/div/i'
 
     #looping through to get mails
     count = 0
