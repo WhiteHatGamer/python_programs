@@ -908,3 +908,6 @@ lock = Thread.lock
 #somefunction call
 time_counter -= perf_counter()
 print(f"Took {time_counter} time to complete process")
+
+#this Function dir gets all the classes or modules of a library or any object or class
+function_of_reduce = [i for i in dir(reduce)]
