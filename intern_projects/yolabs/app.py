@@ -15,9 +15,8 @@ red_lower = (0, 50, 50)
 red_upper = (20, 255, 255)
 
 # Capture an image from the camera
-_, frame = cv2.VideoCapture("https://192.168.0.100:4747/video")
-img = cv2.imread('test2.png')
-cv2.imshow("og", img)
+#_, frame = cv2.VideoCapture("https://192.168.0.100:4747/video")
+img = cv2.imread('test1.png')
 
 # Convert the captured image to grayscale
 gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -36,14 +35,15 @@ red_mask = cv2.inRange(hsv_image, red_lower, red_upper)
 # Apply the green mask to the binary image
 green_result = cv2.bitwise_and(binary_image, binary_image, mask=green_mask)
 
-# Perform OCR on the green result image
-green_text = "aaa"#tess.image_to_string(hsv_image).lower()
-print(green_text)
+# Perform Optical Character Recognition on the green result image
+green_text = tess.image_to_string(green_result).lower()
+print("Text = "+green_text)
 
-#Formatting string for better Abstraction
+# Formatting string for better Abstraction
 for let in green_text:
-    if let in punctuation:
-        green_text.replace(let,'')
+    if let in [*punctuation]:
+        green_text = green_text.replace(let,'')
+
 
 # Check if "Allow" is present in the green text
 if "allow" in green_text:
