@@ -25,7 +25,7 @@ while True:
         audio2 = r.listen(source2)
 
 		# Using google to recognize audio
-        # TODO: Add Seperate exception handling for better experinc?
+        # TODO: Add Separate exception handling for better experience?
         try:
             prompt = r.recognize_google(audio2)
         except:
