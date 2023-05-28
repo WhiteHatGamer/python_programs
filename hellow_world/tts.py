@@ -6,10 +6,12 @@ r = sr.Recognizer()
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
-engine.setProperty('rate', 160)
+engine.setProperty('rate', 200)
 
 # constants
 NAME = "Thahir"
+exit_commands = ["goodbye", "bye", "exit"]
+hello_commands = ["hello", "hi", "hey", "howdy", "salaam", "greetings"]
 
 engine.say(f"Hello, {NAME}. What do you want me to do?")
 engine.runAndWait()
@@ -19,9 +21,11 @@ while True:
         r.adjust_for_ambient_noise(source2, duration=0.2)
 
         #listens for the user's input
+        # TODO: Add Timout feature
         audio2 = r.listen(source2)
 
 		# Using google to recognize audio
+        # TODO: Add Seperate exception handling for better experinc?
         try:
             prompt = r.recognize_google(audio2)
         except:
@@ -33,7 +37,7 @@ while True:
     elif 'how are you' in prompt:
         engine.say("I am Fine, Thanks for asking")
         engine.runAndWait()
-    elif 'goodbye' in prompt:
+    elif any(command in prompt for command in exit_commands):
         engine.say("Goodbye, have a nice day!")
         engine.runAndWait()
         break
