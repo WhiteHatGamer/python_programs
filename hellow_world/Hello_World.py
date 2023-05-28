@@ -62,7 +62,8 @@ eg_surname = "eg_surname"
 eg_full_name = eg_name or eg_surname 
 s2nd_truthy = not falsy
 
-#comments--single line or mutiple lines which developer doesn't want to run
+# TITLE: Comments
+    #single line or mutiple lines which developer doesn't want to run
 '''
 Python - Dynamically typed prg Lang..
 java - Strictly/Strongly typed prog lang...
@@ -163,7 +164,7 @@ notInBoth = artFriends.symmetric_difference(scienceFriendS)
 artAndScience = artFriends.intersection(scienceFriendS)
 allStudents = artFriends.union(scienceFriendS)
 
-#dictionaries
+# TITLE: Dictionaries
 friendAges = {"mary":23 ,"Charlie":22, "Anas": 23}
 print(friendAges["Anas"])
 friendAges["Athaulla"] = 22
@@ -188,7 +189,7 @@ average_grade = total/length
 #But wont work with integers i think
 comma_seperated = ','.join(friends)
 
-#If Statements:
+# TITLE: If Statements:
 user_name = input("Enter Your Name: ")
 if user_name in friends:
     print(f"Hello {user_name}, How Are you Friend")
@@ -197,26 +198,26 @@ elif user_name in family:
 else:
     print(f"Hello {user_name}")
 
-#while_loops
+# TITLE: While loops
 is_learning = True
 while is_learning:
     print("Im Learning")
     user_input = input("Are you still Learning?:")
     is_learning = user_input.lower() == "yes"
 
-#for_loops:
+# TITLE: For loops:
 for index in range(10,0,-1):
     print(f"Countdown: {index}")
 for friend in Frineds:
     print(f"Name of friend is {friend['name']}")
 
-#destructuring:
+# TITLE: Destructuring:
 mask = 'yes', '88%'
 is_mask, percentage = mask
 for fiend,age in fiends:
     print(f"{fiend} is {age} years old")
 
-#iteraring over dictionaries:
+# TITLE: Iterating over dictionaries:
 for name in friendAges:
     print(f"{name} is {friendAges[name]} Years Old")
 for Age in friendAges.values():
@@ -224,7 +225,7 @@ for Age in friendAges.values():
 for name, age in friendAges.items():
     print(f"{name} is {age} years old")
 
-#break and coninue
+# TITLE: Break and Continue
 for i in list1:
     if (i.lower() == 'F'):
         print("WHat F")
@@ -265,14 +266,14 @@ def prime_n(number):
                 break
         else:
             print(f"{n} is a prime")
-#List Slicing
+# TITLE: List Slicing
 l3 = list_of_numbers[3:]
 l3 = list_of_numbers[:5]
 l3 = list_of_numbers[-3:]
 l3 = list_of_numbers[0:-2]
 l3 = list_of_numbers[-3:-1]
 
-#List Comprehension
+# TITLE: List Comprehension
 l1 = [15,456,564,104,616,5,21,165,4,51,654,654,4,13,1,54,654,54,31,4,6]
 for i in l1:
     if not i%2:
@@ -308,11 +309,11 @@ long_timers = {
     if friend_time[i] > 3
 }
 
-#zip
+# TITLE: Zip
 long_timers = dict(zip(friends,friend_time))
 long_timers = list(zip(range(len(friends)),friends,friend_time))
 
-#functions in python
+# TITLE: Functions in python
 def greeter():
     name = input("Enter your Name: ")
     print(f"Hey {name}! Greetings")
@@ -325,7 +326,7 @@ cars = [
     {"make": "Chevrolet","name": "Beat","mileage": 22000,"fuel_consumed": 400},
     {"make": "Chevrolet","name": "Corvette","mileage": 13000,"fuel_consumed": 400}
 ]
-#arguments and parameters
+# TITLE: Arguments and Parameters
 def calculate_mpg(car_to_calculate):
     mpg = car_to_calculate["mileage"] / car_to_calculate["fuel_consumed"]
     return mpg
@@ -354,7 +355,7 @@ def divide(x,y):
 
 print(divide(6,3))
 
-#Default Parameter Values
+# TITLE: Default Parameter Values
 def add(x,y=5):
     print(x+y)
 
@@ -363,7 +364,7 @@ add(6,3)
 add(x=4)
 print(1,2,3,4,5,6,7, sep=' - ') #prints = 1 - 2 - 3 - 4 - 5 - 6 - 7
 
-#lambda
+# TITLE: Lambda
 divide = lambda x, y: x / y
 print(divide(3,78))
 tuple1 = tuple(i for i in l1)
@@ -388,7 +389,7 @@ print (result)
 
 or_l3 = any(l3) #Similiar to OR Gate.. Return true if any elements in an iterable is True
 and_l1 = all(l1) #only returns true if every Element in an iterable is True
-#mutability 
+# TITLE: Mutability 
 #once a variable is assigned i cant be changed
 #all strings  are immuatable
 #int 0-256
@@ -429,7 +430,7 @@ print(account1("Rani",15000))
 print(account1("Sharookh",10000)) #adds with Rani
 #key
 
-#unpacking example
+# TITLE: Unpacking
 def greatest(a,b,c): 
     #like ternary operator in C (a>b && a>c)? a : (b>a? b : c)
     gtest = a if a>b and a>c else b if b>a else c  
@@ -448,7 +449,7 @@ run([1,2,3],12,23,34)
 #i did this to show how different calling methods work.. BUT This CALLED POLYMORPHISM
 run([2,3,4],34,45,56,speed=10) 
 
-#classes
+# TITLE: Classes
 class Employee: #pascal case
 
     # __method__ : special/magic/dendor method
@@ -488,7 +489,7 @@ for i in range(n):
 for i in employee_list:
     i.display()
 
-#incorrect annswers 
+#incorrect answers 
 #1. list is consistent - every copy is edited
 #2. Dunder Method is Built-in Functions or class
 #3. Tuples - consists of a number of values separated by comma and enclosed within parentheses.
@@ -536,7 +537,6 @@ for i in employee_list:
 
 #how to return with placeholders(%d) . you did with --str--
 
-
 class Test:
     def __init__(self) -> None:
         self.list = []
@@ -569,7 +569,7 @@ print(object1) #returns the string, For user
     #Coming tut #!imp for debugging
     #every class to create should have repr
 
-#Inheritance
+# TITLE: Inheritance
 class Staff(Employee): #staff inherited from Employee
     CLASS_VARIABLE = "Works at {this} Company"
 
@@ -610,7 +610,7 @@ worker.display() #normal class Method
 print(worker.days_left) #we dont need () of methods.. Using @property decorator
 professor = Staff(1012,"name2","cs",11200000,"abc2@example.com",36)
 
- #giving two objects as attributes using @staticmethod decorator
+# giving two objects as attributes using @staticmethod decorator
 Staff.compare_employee(worker,professor)
 
 class Money():
@@ -638,14 +638,14 @@ dolla_number = Dollar.Sum_from(423.36,357.4327)
 print(number)       #prints <Money 43.43>       ps: random amount
 print(dolla_number) #prints <Dollar $352.65>    ps: random amount
 
-#Function Aliasing
+# TITLE: Function Aliasing
 def hellow(name):
     print(f"Hello {name}")
 greet = hellow
 greet("name is this") #same as hellow,we give alias
 
 
-#EXCEPTION HANDLING
+# TITLE: Exception Handling
 """
     ValueError
     ZeroDivisionError
@@ -653,7 +653,7 @@ greet("name is this") #same as hellow,we give alias
 """
 #the interpreter Raising The errors when some exception errors
 
-#try-n(except)-else-finally block #always follow this order
+# try-n(except)-else-finally block #always follow this order
 try:
     n1 = 12
     n2 = input("ENter the number: ")
@@ -684,8 +684,9 @@ finally: #works always
     print("Every Exception is handled")
     pass
 print("After Try and except")
-#after error program exited. can we make program to try again until no error...
-#I DONT THINK WE CAN
+# after error program exited. can we make program to try again until no error...
+# I DONT THINK WE CAN
+# We can if we made blocks of try except with flags
 
 class Garage():
     def __init__(self):
@@ -722,9 +723,7 @@ Home_shed.add_car(camaro)
 print(len(Home_shed))
 print(camaro)
 
-
-#offtopic, i always see you open so many windows. may i know how much RAM you have if you dont mind
-
+# TITLE: User Defined errors
 #inheriting from TypeError for our Own custom error we can use most appropriate error
 #Exception for the very basic exceptions
 class CodedError(Exception):
@@ -767,7 +766,7 @@ except ValueError:
 finally:
     print(f"The Garage now have {len(Home_shed)} Cars")
 
-#while developing long programms we might miss some errors
+#while developing long programs we might miss some errors
 #so for that we could traceback with:
 try:
     Home_shed.add_car(camaro)
@@ -777,22 +776,7 @@ except:
     raise
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#Advanced Built-in functions in python
+# TITLE: Advanced Built-in functions in python
 evenlambda = lambda a:not a%2
 #for making every even item in list as a list: 2 ways
 #1 Normal way
@@ -813,18 +797,7 @@ l2 = [1,2,3,4,5,6,7,8,9]
 sumlist = list(map(lambda n: n+5,l2))
 
 
-
-
-
-
-
-
-
-
-
-
-
-#decorators
+# TITLE: Decorators
 def smartdiv(c): #the reference of old function gets stored in c
     print("Inside smartdiv function: ", id(smartdiv))
     def inner(d,e):
@@ -856,8 +829,9 @@ inner_reference = smartdiv(div)
 inner_reference(10,0) #same as calling div with decorator
 
 
-#iterator - since we cant import large dataset to memory it will affect ram..
-    #so iterator gets only the first elemnt and called using next()
+# TITLE: Iterators
+    # - since we cant import large dataset to memory it will affect ram.. 
+    # so iterator gets only the first elemnt and called using next()
 
 l1_iter = iter(l1)
 example_list = (i for i in range(100))
@@ -872,7 +846,7 @@ print(l1_iter.__next__())
 
 #we've learnt so much and that's all because of your amazing teaching. Thank you Mr. Athaulla
 
-#multitasking
+# TITLE: Multitasking
 #concurrency parellelism
 #syncronous and asyncronous
 #main thread - application
