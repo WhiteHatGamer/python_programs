@@ -31,7 +31,7 @@ while True:
         except:
             prompt = ""
         prompt = prompt.lower()
-    if 'hello' in prompt:
+    if any(command in prompt for command in hello_commands):
         engine.say("Hello To You Too")
         engine.runAndWait()
     elif 'how are you' in prompt:
@@ -66,22 +66,32 @@ while True:
     elif 'rate' in prompt:
         engine.say(f"Speech Rate is {engine.getProperty('rate')}")
         engine.runAndWait()
-    elif 'say'in prompt:
-        engine.say(f"What do you want me to say: ")
+    elif 'ditto'in prompt:
+        engine.say(f"Ditto Mode: ON, Say quit to turn off")
         engine.runAndWait()
-        print("Say: ")
-        with sr.Microphone() as source2:
-            r.adjust_for_ambient_noise(source2, duration=0.2)
+        is_saying = True
+        while is_saying:
+            print("Say: ")
+            with sr.Microphone() as source2:
+                r.adjust_for_ambient_noise(source2, duration=0.2)
 
-            #listens for the user's input
-            audio2 = r.listen(source2)
+                #listens for the user's input
+                audio2 = r.listen(source2)
 
-		    # Using google to recognize audio
-            saying = r.recognize_google(audio2)
-            saying = saying.lower()
-        
-        engine.say(f"You Said: {saying}")
-        engine.runAndWait()
+		        # Using google to recognize audio
+                try:
+                    saying = r.recognize_google(audio2)
+                except:
+                    saying = ""
+                saying = saying.lower()
+            if "quit" in saying:
+                is_saying = False
+                engine.say("Ditto Mode: OFF")
+                engine.runAndWait()
+            else:
+                engine.say(f"{saying}")
+                engine.runAndWait()
+
     else:
         engine.say("Huh! I Didn't Understand That.")
         engine.runAndWait()
