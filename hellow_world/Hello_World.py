@@ -846,9 +846,37 @@ print(l1_iter.__next__())
 
 #we've learnt so much and that's all because of your amazing teaching. Thank you Mr. Athaulla
 
+# TITLE: Modules and Packages 
+import json_py
+
+choice = input("insert NoSQL/SQL 0/1")
+if choice:
+    from db_connection import insert_employee as insert
+else:
+    #since its same method we can chose to do which
+    from SQLite import insert_employee as insert
+
+#Check db_connection.py for method initialisation
+import sys
+sys.path.appendr(r"/excel_to_pdf")
+from app import main
+
+#There are many python built in libraries and updating every often
+import urllib
+#dir printout all possible mehtods inside the function
+dir(urllib)
+#help print docs of the function?
+help(urllib.urlopen)
+from operator import add #We can use by add()
+add(2,3)
+
+
+
+
+
 # TITLE: Multitasking
-#concurrency parellelism
-#syncronous and asyncronous
+#concurrency parallelism
+#synchronous and asynchronous
 #main thread - application
 #fcfs theory like
 #Add - 2sec, Sub - 2sec, Mul - 3sec
