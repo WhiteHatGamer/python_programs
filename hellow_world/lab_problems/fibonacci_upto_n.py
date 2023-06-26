@@ -1,12 +1,15 @@
-n=int(input("fibonacci: "))
-x=0
-y=1
-c=2
-print (x)
-print (y)
-while (c<n):
-    z=x+y
-    x=y
-    y=z
-    print (z)
-    c=c+1
+from time import sleep
+n=int(input("Enter The Limit:"))
+j=0
+k=1
+print(j+"")
+print(k)
+while True:
+    temp=k
+    k=k+j
+    j=temp
+    sleep(1)
+    if k>n:
+        break
+    print(k)
+print("Iteration Completed:")
